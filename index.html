@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Executive Surety Services — Lead Form</title>
+  <meta name="description" content="Executive Surety Services lead form. Submit your information and we’ll reach out ASAP." />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.10);
+      --text:#ffffff;
+      --muted: rgba(255,255,255,.75);
+      --line: rgba(255,255,255,.16);
+      --accent:#4dd7ff;
+      --accent2:#a855f7;
+      --ok:#22c55e;
+      --warn:#f59e0b;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(168,85,247,.28), transparent 60%),
+        radial-gradient(900px 500px at 90% 20%, rgba(77,215,255,.22), transparent 55%),
+        radial-gradient(900px 500px at 50% 100%, rgba(34,197,94,.12), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      min-height:100vh;
+    }
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 16px 64px}
+    .topbar{
+      display:flex;gap:14px;align-items:center;justify-content:space-between;
+      padding:14px 16px;border:1px solid var(--line);background:var(--card);
+      border-radius:18px;backdrop-filter: blur(10px);
+    }
+    .brand{display:flex;gap:10px;align-items:center}
+    .logo{
+      width:42px;height:42px;border-radius:14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .brand h1{font-size:16px;margin:0;letter-spacing:.2px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+    .pill{
+      font-size:12px;color:rgba(255,255,255,.92);
+      border:1px solid var(--line);background:rgba(255,255,255,.04);
+      padding:8px 10px;border-radius:999px;
+    }
+
+    .grid{
+      display:grid;grid-template-columns: 1.15fr .85fr;
+      gap:18px;margin-top:18px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns:1fr} }
+
+    .card{
+      border:1px solid var(--line);
+      background: var(--card);
+      border-radius:22px;
+      padding:18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 14px 40px rgba(0,0,0,.28);
+    }
+    .hero h2{margin:0 0 10px;font-size:26px;letter-spacing:.2px}
+    .hero p{margin:0 0 14px;color:var(--muted);line-height:1.45}
+    .list{
+      display:grid;gap:10px;margin-top:14px
+    }
+    .item{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius:16px;
+      padding:12px 12px;
+    }
+    .item b{display:block;font-size:13px;margin-bottom:4px}
+    .item span{color:var(--muted);font-size:13px}
+
+    .notice{
+      display:none;
+      border:1px solid rgba(34,197,94,.35);
+      background: rgba(34,197,94,.10);
+      color: rgba(255,255,255,.95);
+      border-radius:18px;
+      padding:14px 14px;
+      margin: 0 0 14px;
+    }
+    .notice strong{display:block;margin-bottom:4px}
+    .notice small{color:rgba(255,255,255,.85)}
+
+    form{margin-top:10px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width: 720px){ .row{grid-template-columns:1fr} }
+
+    label{display:block;font-weight:800;margin:10px 0 6px;font-size:13px}
+    input, textarea, select{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height:110px;resize:vertical}
+    input::placeholder, textarea::placeholder{color:rgba(255,255,255,.55)}
+    .btn{
+      width:100%;
+      margin-top:14px;
+      border:none;
+      border-radius:16px;
+      padding:12px 14px;
+      font-weight:900;
+      cursor:pointer;
+      color:#071018;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+    }
+    .btn:active{transform: translateY(1px)}
+    .fine{
+      margin-top:10px;
+      font-size:12px;
+      color:rgba(255,255,255,.70);
+      line-height:1.4;
+    }
+
+    .contact h3{margin:0 0 10px;font-size:18px}
+    .contact .box{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius:18px;
+      padding:14px;
+      margin-top:12px;
+    }
+    .kv{display:grid;gap:8px}
+    .kv div{display:flex;gap:8px;flex-wrap:wrap}
+    .k{color:rgba(255,255,255,.7);font-size:12px;min-width:120px}
+    .v{font-size:13px}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Executive Surety Services</h1>
+          <p>Fast lead intake • Netlify Forms enabled</p>
+        </div>
+      </div>
+      <div class="pill">Secure submission • Anti-spam enabled</div>
+    </div>
+
+    <div class="grid">
+
+      <!-- LEFT: Hero + Form -->
+      <div class="card hero">
+
+        <div id="successNotice" class="notice">
+          <strong>? Thank you — we received your information!</strong>
+          <small>We’ll review it and reach out as soon as possible.</small>
+        </div>
+
+        <h2>Submit your information</h2>
+        <p>
+          Fill out the form below. Your submission is captured by Netlify and can be emailed to your Outlook once notifications are turned on.
+        </p>
+
+        <div class="list">
+          <div class="item">
+            <b>What happens next?</b>
+            <span>After you submit, this page will show a confirmation message. Your submission will appear in Netlify ? Forms.</span>
+          </div>
+          <div class="item">
+            <b>Tip</b>
+            <span>After deploying, submit one test entry to “activate” the form in Netlify Forms.</span>
+          </div>
+        </div>
+
+        <!-- NETLIFY FORM (ONE FILE SETUP) -->
+        <form
+          name="executive-surety-leads"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/?success=true"
+          style="margin-top:16px"
+        >
+          <!-- Required: form-name must match the form name -->
+          <input type="hidden" name="form-name" value="executive-surety-leads">
+          <input type="hidden" name="subject" value="New Executive Surety Lead">
+
+          <!-- Honeypot (spam trap) -->
+          <p style="display:none">
+            <label>Don’t fill this out: <input name="bot-field"></label>
+          </p>
+
+          <div class="row">
+            <div>
+              <label>Full Government Name *</label>
+              <input required name="full_government_name" type="text" placeholder="First Middle Last" />
+            </div>
+            <div>
+              <label>Bail Bond License Number</label>
+              <input name="license_number" type="text" placeholder="W0XXXXX" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Phone Number *</label>
+              <input required name="phone_number" type="tel" placeholder="305-244-7388" />
+            </div>
+            <div>
+              <label>Email *</label>
+              <input required name="email" type="email" placeholder="you@email.com" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>County</label>
+              <input name="county" type="text" placeholder="Lee, Charlotte, etc." />
+            </div>
+            <div>
+              <label>Defendant Name</label>
+              <input name="defendant_name" type="text" placeholder="If applicable" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>Number of Charges</label>
+              <input name="charges_count" type="number" min="0" placeholder="0" />
+            </div>
+            <div>
+              <label>Preferred Contact Method</label>
+              <select name="preferred_contact">
+                <option value="Phone">Phone</option>
+                <option value="Email">Email</option>
+                <option value="Text">Text</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label>Message / Details</label>
+            <textarea name="message" placeholder="Add any helpful details..."></textarea>
+          </div>
+
+          <button class="btn" type="submit">Submit</button>
+
+          <div class="fine">
+            By submitting, you authorize Executive Surety Services to contact you about this request.
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: Contact info -->
+      <div class="card contact">
+        <h3>Business Contact</h3>
+
+        <div class="box">
+          <div class="kv">
+            <div><span class="k">Agent</span><span class="v">Jonathan Crespo</span></div>
+            <div><span class="k">License #</span><span class="v">W039051</span></div>
+            <div><span class="k">Phone</span><span class="v">305.244.7388</span></div>
+            <div><span class="k">Email</span><span class="v">ExecutiveSuretyServices@Outlook.com</span></div>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="kv">
+            <div><span class="k">Note</span><span class="v">Netlify email forwarding for domain email is different from form notifications.</span></div>
+            <div><span class="k">Forms emails</span><span class="v">Set in Netlify ? Site ? Forms ? Notifications</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Show thank-you message if the URL includes ?success=true
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("success") === "true") {
+        const el = document.getElementById("successNotice");
+        if (el) el.style.display = "block";
+        // optional: scroll to top so user sees the message
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    })();
+  </script>
+</body>
+</html>
