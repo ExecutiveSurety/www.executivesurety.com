@@ -5,33 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Executive Surety Services, LLC</title>
 <style>
+
   :root{
-    --bg:#061326;
-    --panel:#0d2b52;
-    --card:#0f2f5c;
-    --line:rgba(255,255,255,.14);
-    --text:#fff;
-    --muted:#c9d6ff;
-    --gold:#ffd166;
-    --accent:#4da3ff;
-    --shadow:0 18px 45px rgba(0,0,0,.35);
-    --radius:16px;
+    --bg:#060A12;
+    --panel:#0B1626;
+    --card:#0E1C30;
+    --line:rgba(255,255,255,.10);
+    --text:#F3F6FF;
+    --muted:rgba(243,246,255,.72);
+    --gold:#D6B56A;
+    --accent:#7FA7FF;
+    --shadow:0 18px 50px rgba(0,0,0,.45);
+    --radius:18px;
     --max:1200px;
   }
-  *{box-sizing:border-box}
+*{box-sizing:border-box}
+  
   body{
     margin:0;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color:var(--text);
     background:
-      radial-gradient(1100px 600px at 15% 10%, rgba(77,163,255,.22), transparent 60%),
-      radial-gradient(900px 540px at 90% 18%, rgba(255,209,102,.16), transparent 55%),
-      linear-gradient(180deg, #081b36, var(--bg));
+      radial-gradient(900px 520px at 15% 12%, rgba(127,167,255,.12), transparent 60%),
+      radial-gradient(800px 520px at 90% 18%, rgba(214,181,106,.10), transparent 58%),
+      linear-gradient(180deg, #070E1B, var(--bg));
   }
   a{color:var(--gold);font-weight:700;text-decoration:none}
+  a:hover{filter:brightness(1.06)}
   .topbar{
     background:linear-gradient(180deg, rgba(13,43,82,1), rgba(8,28,56,1));
-    border-bottom:2px solid rgba(255,209,102,.55);
+    border-bottom:1px solid rgba(214,181,106,.45);
   }
   .topinner{
     max-width:var(--max);
@@ -64,15 +67,15 @@
   .btnPulse:after{
     content:"";
     position:absolute;
-    inset:-10px;
-    border-radius:18px;
-    border:2px solid rgba(255,209,102,.22);
+    inset:0;
+    border-radius:14px;
+    background:linear-gradient(120deg, transparent 0%, rgba(214,181,106,.18) 45%, transparent 70%);
     opacity:0;
-    animation:pulse 2s infinite;
+    transform:translateX(-8%);
+    transition: opacity .18s ease, transform .35s ease;
     pointer-events:none;
   }
-  @keyframes pulse{
-    0%{transform:scale(.92); opacity:0;}
+  .btnPulse:hover:after{opacity:1; transform:translateX(8%);}
     25%{opacity:.55;}
     100%{transform:scale(1.05); opacity:0;}
   }
@@ -138,7 +141,45 @@
   .contactItem{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.14);}
   .footer{text-align:center;font-size:12px;opacity:.65;margin:34px 0 10px}
 
-  @media(max-width:980px){
+  
+  /* Luxury Notary details */
+  .offerList{
+    margin:12px 0 0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:10px;
+    color:var(--muted);
+    font-weight:650;
+    letter-spacing:.2px;
+  }
+  .offerList li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    line-height:1.35;
+  }
+  .offerList li:before{
+    content:"✓";
+    color:var(--gold);
+    font-weight:900;
+    margin-top:1px;
+  }
+  .trustPill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:12px;
+    padding:8px 12px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.14);
+    background:rgba(255,255,255,.04);
+    color:var(--muted);
+    font-weight:800;
+    font-size:13px;
+  }
+
+@media(max-width:980px){
     .hero{grid-template-columns:1fr}
     .notaryRow{grid-template-columns:1fr}
     .countyGrid{grid-template-columns:1fr}
@@ -148,32 +189,21 @@
   }
 
 .nowServicing{
-  margin:10px 0 14px;
-  padding:14px 18px;
+  margin:14px 0 14px;
+  padding:12px 16px;
   border-radius:14px;
-  background:linear-gradient(90deg,#7a0000,#b30000,#7a0000);
-  color:white;
+  background:linear-gradient(90deg, rgba(214,181,106,.18), rgba(255,255,255,.04), rgba(214,181,106,.18));
+  border:1px solid rgba(214,181,106,.45);
+  color:var(--text);
   font-weight:900;
-  font-size:22px;
+  font-size:18px;
   text-align:center;
-  letter-spacing:1px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 0 25px rgba(255,0,0,.4);
+  letter-spacing:.9px;
+  box-shadow:0 12px 35px rgba(0,0,0,.35);
 }
 .nowServicing:before,
-.nowServicing:after{
-  content:"🚨";
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:26px;
-  animation:flash 1s infinite;
-}
-.nowServicing:before{left:12px;}
-.nowServicing:after{right:12px;animation-delay:.5s;}
-@keyframes flash{
-  0%,100%{opacity:1;text-shadow:0 0 8px #ff3b3b;}
+.nowServicing:after{content:"";display:none;}
+
   50%{opacity:.2;text-shadow:none;}
 }
 
@@ -272,6 +302,7 @@
     letter-spacing:.5px;
   }
 
+
 </style>
 </head>
 <body>
@@ -291,10 +322,8 @@
       <a href="#bail">Bail Posting</a>
       <a href="#signup">Sign Up</a>
       <a href="#bio">Bio</a>
-      <a href="#comingsoon">Coming Soon</a>
-      <a href="#contact">Contact</a>
-      <a class="tabComingSoon" href="#coming-soon">Coming Soon</a>
-    </div>
+<a href="#contact">Contact</a>
+</div>
 
     <a class="btn btnPulse" href="tel:3052447388">Call 305.244.7388</a>
   </div>
@@ -321,6 +350,12 @@
           <div class="subtitle" style="margin-top:10px">
             Fast, professional notarizations by appointment.
           </div>
+          <ul class="offerList">
+            <li>Mobile & in-office appointments</li>
+            <li>Fast turnaround • Clear pricing</li>
+            <li>Professional, courteous service</li>
+          </ul>
+          <div class="trustPill">⭐ Trusted local support • By appointment</div>
         </div>
 
         <div class="mascotFull">
@@ -358,38 +393,108 @@
             Posting support & coordination • Clear steps and quick communication • Professional service from start to finish.
           </div>
         </div>
+        <div class="countyCard">
+          <div class="countyTop">
+            <strong>Hendry County</strong>
+            <div class="badgePrice">Fee $50.00</div>
+          </div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0NjAnIGhlaWdodD0nMjYwJyB2aWV3Qm94PScwIDAgNDYwIDI2MCc+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0nYmcnIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScxJz4KICAgIDxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nIzBmMmY1YycvPgogICAgPHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjMGEyNDQ3Jy8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmFkaWFsR3JhZGllbnQgaWQ9J2dsb3cnIGN4PSczMCUnIGN5PScyNSUnIHI9JzcwJSc+CiAgICA8c3RvcCBvZmZzZXQ9JzAnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwuMzUpJy8+CiAgICA8c3RvcCBvZmZzZXQ9JzEnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwwKScvPgogIDwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNiZyknLz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNnbG93KScvPgo8ZyBvcGFjaXR5PScuMTInIHN0cm9rZT0nd2hpdGUnPgogIDxwYXRoIGQ9J000MCA0MCBINDIwJy8+PHBhdGggZD0nTTQwIDgwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTIwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTYwIEg0MjAnLz48cGF0aCBkPSdNNDAgMjAwIEg0MjAnLz4KICA8cGF0aCBkPSdNODAgMzAgVjIzMCcvPjxwYXRoIGQ9J00xNDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yMDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yNjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zMjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zODAgMzAgVjIzMCcvPgo8L2c+CjwhLS0gY291bnR5IHNpbGhvdWV0dGUgYmxvYiAtLT4KPHBhdGggZD0nTTE1NSA3MGMzNS0zNSA5NS00MCAxNDAtMTggMzAgMTUgNTUgNDUgNjAgNzggNSAzNS0xMCA3Mi00MCA5NS00MCAzMC0xMTAgNDAtMTY1IDE1LTQ1LTIwLTc1LTcwLTU1LTEyMCA4LTIwIDI4LTQwIDYwLTUweicKICAgICAgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwuMDcpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsLjE4KScgc3Ryb2tlLXdpZHRoPScyJy8+CjwhLS0gcGluIC0tPgo8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgyNzAgOTUpJz4KICA8cGF0aCBkPSdNMTIgMjJzNy01LjIgNy0xMmE3IDcgMCAxIDAtMTQgMGMwIDYuOCA3IDEyIDcgMTJ6JyBmaWxsPScjZmZkMTY2Jy8+CiAgPGNpcmNsZSBjeD0nMTInIGN5PScxMCcgcj0nMi41JyBmaWxsPScjMGIxZDNhJy8+CjwvZz4KPHRleHQgeD0nMjgnIHk9JzQ0JyBmaWxsPSd3aGl0ZScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzE4JyBmb250LXdlaWdodD0nNzAwJz5MZWUgQ291bnR5LCBGbG9yaWRhPC90ZXh0Pgo8dGV4dCB4PScyOCcgeT0nNzAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjc1KScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzEzJz5TZXJ2aWNlIEFyZWEg4oCiIERyb3AgUGluIExvY2F0aW9uPC90ZXh0Pgo8L3N2Zz4=" alt="County map">
+          <div class="countyBottom">
+            <div class="pinline"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMicgaGVpZ2h0PScyMicgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJz4KPHBhdGggZD0nTTEyIDIyczctNS4yIDctMTJhNyA3IDAgMSAwLTE0IDBjMCA2LjggNyAxMiA3IDEyeicgZmlsbD0nI2ZmZDE2NicvPgo8Y2lyY2xlIGN4PScxMicgY3k9JzEwJyByPScyLjUnIGZpbGw9JyMwYjFkM2EnLz4KPC9zdmc+" alt="Pin"> Drop pin service area • Hendry County, FL</div>
+            <div class="countyMeta">
+              Posting support & coordination • Clear steps and quick communication • Professional service from start to finish.
+            </div>
+          </div>
+        </div>
+        <div class="countyCard">
+          <div class="countyTop">
+            <strong>Glades County</strong>
+            <div class="badgePrice">Fee $100.00</div>
+          </div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0NjAnIGhlaWdodD0nMjYwJyB2aWV3Qm94PScwIDAgNDYwIDI2MCc+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0nYmcnIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScxJz4KICAgIDxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nIzBmMmY1YycvPgogICAgPHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjMGEyNDQ3Jy8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmFkaWFsR3JhZGllbnQgaWQ9J2dsb3cnIGN4PSczMCUnIGN5PScyNSUnIHI9JzcwJSc+CiAgICA8c3RvcCBvZmZzZXQ9JzAnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwuMzUpJy8+CiAgICA8c3RvcCBvZmZzZXQ9JzEnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwwKScvPgogIDwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNiZyknLz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNnbG93KScvPgo8ZyBvcGFjaXR5PScuMTInIHN0cm9rZT0nd2hpdGUnPgogIDxwYXRoIGQ9J000MCA0MCBINDIwJy8+PHBhdGggZD0nTTQwIDgwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTIwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTYwIEg0MjAnLz48cGF0aCBkPSdNNDAgMjAwIEg0MjAnLz4KICA8cGF0aCBkPSdNODAgMzAgVjIzMCcvPjxwYXRoIGQ9J00xNDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yMDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yNjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zMjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zODAgMzAgVjIzMCcvPgo8L2c+CjwhLS0gY291bnR5IHNpbGhvdWV0dGUgYmxvYiAtLT4KPHBhdGggZD0nTTE1NSA3MGMzNS0zNSA5NS00MCAxNDAtMTggMzAgMTUgNTUgNDUgNjAgNzggNSAzNS0xMCA3Mi00MCA5NS00MCAzMC0xMTAgNDAtMTY1IDE1LTQ1LTIwLTc1LTcwLTU1LTEyMCA4LTIwIDI4LTQwIDYwLTUweicKICAgICAgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwuMDcpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsLjE4KScgc3Ryb2tlLXdpZHRoPScyJy8+CjwhLS0gcGluIC0tPgo8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgyNzAgOTUpJz4KICA8cGF0aCBkPSdNMTIgMjJzNy01LjIgNy0xMmE3IDcgMCAxIDAtMTQgMGMwIDYuOCA3IDEyIDcgMTJ6JyBmaWxsPScjZmZkMTY2Jy8+CiAgPGNpcmNsZSBjeD0nMTInIGN5PScxMCcgcj0nMi41JyBmaWxsPScjMGIxZDNhJy8+CjwvZz4KPHRleHQgeD0nMjgnIHk9JzQ0JyBmaWxsPSd3aGl0ZScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzE4JyBmb250LXdlaWdodD0nNzAwJz5MZWUgQ291bnR5LCBGbG9yaWRhPC90ZXh0Pgo8dGV4dCB4PScyOCcgeT0nNzAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjc1KScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzEzJz5TZXJ2aWNlIEFyZWEg4oCiIERyb3AgUGluIExvY2F0aW9uPC90ZXh0Pgo8L3N2Zz4=" alt="County map">
+          <div class="countyBottom">
+            <div class="pinline"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMicgaGVpZ2h0PScyMicgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJz4KPHBhdGggZD0nTTEyIDIyczctNS4yIDctMTJhNyA3IDAgMSAwLTE0IDBjMCA2LjggNyAxMiA3IDEyeicgZmlsbD0nI2ZmZDE2NicvPgo8Y2lyY2xlIGN4PScxMicgY3k9JzEwJyByPScyLjUnIGZpbGw9JyMwYjFkM2EnLz4KPC9zdmc+" alt="Pin"> Drop pin service area • Glades County, FL</div>
+            <div class="countyMeta">
+              Posting support & coordination • Clear steps and quick communication • Professional service from start to finish.
+            </div>
+          </div>
+        </div>
+        <div class="countyCard">
+          <div class="countyTop">
+            <strong>Desoto County</strong>
+            <div class="badgePrice">Fee $125.00</div>
+          </div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0NjAnIGhlaWdodD0nMjYwJyB2aWV3Qm94PScwIDAgNDYwIDI2MCc+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0nYmcnIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScxJz4KICAgIDxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nIzBmMmY1YycvPgogICAgPHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjMGEyNDQ3Jy8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmFkaWFsR3JhZGllbnQgaWQ9J2dsb3cnIGN4PSczMCUnIGN5PScyNSUnIHI9JzcwJSc+CiAgICA8c3RvcCBvZmZzZXQ9JzAnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwuMzUpJy8+CiAgICA8c3RvcCBvZmZzZXQ9JzEnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwwKScvPgogIDwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNiZyknLz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNnbG93KScvPgo8ZyBvcGFjaXR5PScuMTInIHN0cm9rZT0nd2hpdGUnPgogIDxwYXRoIGQ9J000MCA0MCBINDIwJy8+PHBhdGggZD0nTTQwIDgwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTIwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTYwIEg0MjAnLz48cGF0aCBkPSdNNDAgMjAwIEg0MjAnLz4KICA8cGF0aCBkPSdNODAgMzAgVjIzMCcvPjxwYXRoIGQ9J00xNDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yMDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yNjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zMjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zODAgMzAgVjIzMCcvPgo8L2c+CjwhLS0gY291bnR5IHNpbGhvdWV0dGUgYmxvYiAtLT4KPHBhdGggZD0nTTE1NSA3MGMzNS0zNSA5NS00MCAxNDAtMTggMzAgMTUgNTUgNDUgNjAgNzggNSAzNS0xMCA3Mi00MCA5NS00MCAzMC0xMTAgNDAtMTY1IDE1LTQ1LTIwLTc1LTcwLTU1LTEyMCA4LTIwIDI4LTQwIDYwLTUweicKICAgICAgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwuMDcpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsLjE4KScgc3Ryb2tlLXdpZHRoPScyJy8+CjwhLS0gcGluIC0tPgo8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgyNzAgOTUpJz4KICA8cGF0aCBkPSdNMTIgMjJzNy01LjIgNy0xMmE3IDcgMCAxIDAtMTQgMGMwIDYuOCA3IDEyIDcgMTJ6JyBmaWxsPScjZmZkMTY2Jy8+CiAgPGNpcmNsZSBjeD0nMTInIGN5PScxMCcgcj0nMi41JyBmaWxsPScjMGIxZDNhJy8+CjwvZz4KPHRleHQgeD0nMjgnIHk9JzQ0JyBmaWxsPSd3aGl0ZScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzE4JyBmb250LXdlaWdodD0nNzAwJz5MZWUgQ291bnR5LCBGbG9yaWRhPC90ZXh0Pgo8dGV4dCB4PScyOCcgeT0nNzAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjc1KScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzEzJz5TZXJ2aWNlIEFyZWEg4oCiIERyb3AgUGluIExvY2F0aW9uPC90ZXh0Pgo8L3N2Zz4=" alt="County map">
+          <div class="countyBottom">
+            <div class="pinline"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMicgaGVpZ2h0PScyMicgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJz4KPHBhdGggZD0nTTEyIDIyczctNS4yIDctMTJhNyA3IDAgMSAwLTE0IDBjMCA2LjggNyAxMiA3IDEyeicgZmlsbD0nI2ZmZDE2NicvPgo8Y2lyY2xlIGN4PScxMicgY3k9JzEwJyByPScyLjUnIGZpbGw9JyMwYjFkM2EnLz4KPC9zdmc+" alt="Pin"> Drop pin service area • Desoto County, FL</div>
+            <div class="countyMeta">
+              Posting support & coordination • Clear steps and quick communication • Professional service from start to finish.
+            </div>
+          </div>
+        </div>
+        <div class="countyCard">
+          <div class="countyTop">
+            <strong>Sarasota County</strong>
+            <div class="badgePrice">Fee $150.00</div>
+          </div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0NjAnIGhlaWdodD0nMjYwJyB2aWV3Qm94PScwIDAgNDYwIDI2MCc+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0nYmcnIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScxJz4KICAgIDxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nIzBmMmY1YycvPgogICAgPHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjMGEyNDQ3Jy8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmFkaWFsR3JhZGllbnQgaWQ9J2dsb3cnIGN4PSczMCUnIGN5PScyNSUnIHI9JzcwJSc+CiAgICA8c3RvcCBvZmZzZXQ9JzAnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwuMzUpJy8+CiAgICA8c3RvcCBvZmZzZXQ9JzEnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwwKScvPgogIDwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNiZyknLz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNnbG93KScvPgo8ZyBvcGFjaXR5PScuMTInIHN0cm9rZT0nd2hpdGUnPgogIDxwYXRoIGQ9J000MCA0MCBINDIwJy8+PHBhdGggZD0nTTQwIDgwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTIwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTYwIEg0MjAnLz48cGF0aCBkPSdNNDAgMjAwIEg0MjAnLz4KICA8cGF0aCBkPSdNODAgMzAgVjIzMCcvPjxwYXRoIGQ9J00xNDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yMDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yNjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zMjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zODAgMzAgVjIzMCcvPgo8L2c+CjwhLS0gY291bnR5IHNpbGhvdWV0dGUgYmxvYiAtLT4KPHBhdGggZD0nTTE1NSA3MGMzNS0zNSA5NS00MCAxNDAtMTggMzAgMTUgNTUgNDUgNjAgNzggNSAzNS0xMCA3Mi00MCA5NS00MCAzMC0xMTAgNDAtMTY1IDE1LTQ1LTIwLTc1LTcwLTU1LTEyMCA4LTIwIDI4LTQwIDYwLTUweicKICAgICAgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwuMDcpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsLjE4KScgc3Ryb2tlLXdpZHRoPScyJy8+CjwhLS0gcGluIC0tPgo8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgyNzAgOTUpJz4KICA8cGF0aCBkPSdNMTIgMjJzNy01LjIgNy0xMmE3IDcgMCAxIDAtMTQgMGMwIDYuOCA3IDEyIDcgMTJ6JyBmaWxsPScjZmZkMTY2Jy8+CiAgPGNpcmNsZSBjeD0nMTInIGN5PScxMCcgcj0nMi41JyBmaWxsPScjMGIxZDNhJy8+CjwvZz4KPHRleHQgeD0nMjgnIHk9JzQ0JyBmaWxsPSd3aGl0ZScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzE4JyBmb250LXdlaWdodD0nNzAwJz5MZWUgQ291bnR5LCBGbG9yaWRhPC90ZXh0Pgo8dGV4dCB4PScyOCcgeT0nNzAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjc1KScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzEzJz5TZXJ2aWNlIEFyZWEg4oCiIERyb3AgUGluIExvY2F0aW9uPC90ZXh0Pgo8L3N2Zz4=" alt="County map">
+          <div class="countyBottom">
+            <div class="pinline"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMicgaGVpZ2h0PScyMicgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJz4KPHBhdGggZD0nTTEyIDIyczctNS4yIDctMTJhNyA3IDAgMSAwLTE0IDBjMCA2LjggNyAxMiA3IDEyeicgZmlsbD0nI2ZmZDE2NicvPgo8Y2lyY2xlIGN4PScxMicgY3k9JzEwJyByPScyLjUnIGZpbGw9JyMwYjFkM2EnLz4KPC9zdmc+" alt="Pin"> Drop pin service area • Sarasota County, FL</div>
+            <div class="countyMeta">
+              Posting support & coordination • Clear steps and quick communication • Professional service from start to finish.
+            </div>
+          </div>
+        </div>
+        <div class="countyCard">
+          <div class="countyTop">
+            <strong>Highlands County</strong>
+            <div class="badgePrice">Fee $150.00</div>
+          </div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0NjAnIGhlaWdodD0nMjYwJyB2aWV3Qm94PScwIDAgNDYwIDI2MCc+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0nYmcnIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScxJz4KICAgIDxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nIzBmMmY1YycvPgogICAgPHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjMGEyNDQ3Jy8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmFkaWFsR3JhZGllbnQgaWQ9J2dsb3cnIGN4PSczMCUnIGN5PScyNSUnIHI9JzcwJSc+CiAgICA8c3RvcCBvZmZzZXQ9JzAnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwuMzUpJy8+CiAgICA8c3RvcCBvZmZzZXQ9JzEnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwwKScvPgogIDwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNiZyknLz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNnbG93KScvPgo8ZyBvcGFjaXR5PScuMTInIHN0cm9rZT0nd2hpdGUnPgogIDxwYXRoIGQ9J000MCA0MCBINDIwJy8+PHBhdGggZD0nTTQwIDgwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTIwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTYwIEg0MjAnLz48cGF0aCBkPSdNNDAgMjAwIEg0MjAnLz4KICA8cGF0aCBkPSdNODAgMzAgVjIzMCcvPjxwYXRoIGQ9J00xNDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yMDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yNjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zMjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zODAgMzAgVjIzMCcvPgo8L2c+CjwhLS0gY291bnR5IHNpbGhvdWV0dGUgYmxvYiAtLT4KPHBhdGggZD0nTTE1NSA3MGMzNS0zNSA5NS00MCAxNDAtMTggMzAgMTUgNTUgNDUgNjAgNzggNSAzNS0xMCA3Mi00MCA5NS00MCAzMC0xMTAgNDAtMTY1IDE1LTQ1LTIwLTc1LTcwLTU1LTEyMCA4LTIwIDI4LTQwIDYwLTUweicKICAgICAgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwuMDcpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsLjE4KScgc3Ryb2tlLXdpZHRoPScyJy8+CjwhLS0gcGluIC0tPgo8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgyNzAgOTUpJz4KICA8cGF0aCBkPSdNMTIgMjJzNy01LjIgNy0xMmE3IDcgMCAxIDAtMTQgMGMwIDYuOCA3IDEyIDcgMTJ6JyBmaWxsPScjZmZkMTY2Jy8+CiAgPGNpcmNsZSBjeD0nMTInIGN5PScxMCcgcj0nMi41JyBmaWxsPScjMGIxZDNhJy8+CjwvZz4KPHRleHQgeD0nMjgnIHk9JzQ0JyBmaWxsPSd3aGl0ZScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzE4JyBmb250LXdlaWdodD0nNzAwJz5MZWUgQ291bnR5LCBGbG9yaWRhPC90ZXh0Pgo8dGV4dCB4PScyOCcgeT0nNzAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjc1KScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzEzJz5TZXJ2aWNlIEFyZWEg4oCiIERyb3AgUGluIExvY2F0aW9uPC90ZXh0Pgo8L3N2Zz4=" alt="County map">
+          <div class="countyBottom">
+            <div class="pinline"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMicgaGVpZ2h0PScyMicgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJz4KPHBhdGggZD0nTTEyIDIyczctNS4yIDctMTJhNyA3IDAgMSAwLTE0IDBjMCA2LjggNyAxMiA3IDEyeicgZmlsbD0nI2ZmZDE2NicvPgo8Y2lyY2xlIGN4PScxMicgY3k9JzEwJyByPScyLjUnIGZpbGw9JyMwYjFkM2EnLz4KPC9zdmc+" alt="Pin"> Drop pin service area • Highlands County, FL</div>
+            <div class="countyMeta">
+              Posting support & coordination • Clear steps and quick communication • Professional service from start to finish.
+            </div>
+          </div>
+        </div>
+        <div class="countyCard">
+          <div class="countyTop">
+            <strong>Manatee County</strong>
+            <div class="badgePrice">Fee $150.00</div>
+          </div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0NjAnIGhlaWdodD0nMjYwJyB2aWV3Qm94PScwIDAgNDYwIDI2MCc+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0nYmcnIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScxJz4KICAgIDxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nIzBmMmY1YycvPgogICAgPHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjMGEyNDQ3Jy8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmFkaWFsR3JhZGllbnQgaWQ9J2dsb3cnIGN4PSczMCUnIGN5PScyNSUnIHI9JzcwJSc+CiAgICA8c3RvcCBvZmZzZXQ9JzAnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwuMzUpJy8+CiAgICA8c3RvcCBvZmZzZXQ9JzEnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwwKScvPgogIDwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNiZyknLz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNnbG93KScvPgo8ZyBvcGFjaXR5PScuMTInIHN0cm9rZT0nd2hpdGUnPgogIDxwYXRoIGQ9J000MCA0MCBINDIwJy8+PHBhdGggZD0nTTQwIDgwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTIwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTYwIEg0MjAnLz48cGF0aCBkPSdNNDAgMjAwIEg0MjAnLz4KICA8cGF0aCBkPSdNODAgMzAgVjIzMCcvPjxwYXRoIGQ9J00xNDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yMDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yNjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zMjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zODAgMzAgVjIzMCcvPgo8L2c+CjwhLS0gY291bnR5IHNpbGhvdWV0dGUgYmxvYiAtLT4KPHBhdGggZD0nTTE1NSA3MGMzNS0zNSA5NS00MCAxNDAtMTggMzAgMTUgNTUgNDUgNjAgNzggNSAzNS0xMCA3Mi00MCA5NS00MCAzMC0xMTAgNDAtMTY1IDE1LTQ1LTIwLTc1LTcwLTU1LTEyMCA4LTIwIDI4LTQwIDYwLTUweicKICAgICAgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwuMDcpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsLjE4KScgc3Ryb2tlLXdpZHRoPScyJy8+CjwhLS0gcGluIC0tPgo8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgyNzAgOTUpJz4KICA8cGF0aCBkPSdNMTIgMjJzNy01LjIgNy0xMmE3IDcgMCAxIDAtMTQgMGMwIDYuOCA3IDEyIDcgMTJ6JyBmaWxsPScjZmZkMTY2Jy8+CiAgPGNpcmNsZSBjeD0nMTInIGN5PScxMCcgcj0nMi41JyBmaWxsPScjMGIxZDNhJy8+CjwvZz4KPHRleHQgeD0nMjgnIHk9JzQ0JyBmaWxsPSd3aGl0ZScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzE4JyBmb250LXdlaWdodD0nNzAwJz5MZWUgQ291bnR5LCBGbG9yaWRhPC90ZXh0Pgo8dGV4dCB4PScyOCcgeT0nNzAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjc1KScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzEzJz5TZXJ2aWNlIEFyZWEg4oCiIERyb3AgUGluIExvY2F0aW9uPC90ZXh0Pgo8L3N2Zz4=" alt="County map">
+          <div class="countyBottom">
+            <div class="pinline"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMicgaGVpZ2h0PScyMicgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJz4KPHBhdGggZD0nTTEyIDIyczctNS4yIDctMTJhNyA3IDAgMSAwLTE0IDBjMCA2LjggNyAxMiA3IDEyeicgZmlsbD0nI2ZmZDE2NicvPgo8Y2lyY2xlIGN4PScxMicgY3k9JzEwJyByPScyLjUnIGZpbGw9JyMwYjFkM2EnLz4KPC9zdmc+" alt="Pin"> Drop pin service area • Manatee County, FL</div>
+            <div class="countyMeta">
+              Posting support & coordination • Clear steps and quick communication • Professional service from start to finish.
+            </div>
+          </div>
+        </div>
+        <div class="countyCard">
+          <div class="countyTop">
+            <strong>Hardee County</strong>
+            <div class="badgePrice">Fee $150.00</div>
+          </div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc0NjAnIGhlaWdodD0nMjYwJyB2aWV3Qm94PScwIDAgNDYwIDI2MCc+CjxkZWZzPgogIDxsaW5lYXJHcmFkaWVudCBpZD0nYmcnIHgxPScwJyB5MT0nMCcgeDI9JzEnIHkyPScxJz4KICAgIDxzdG9wIG9mZnNldD0nMCcgc3RvcC1jb2xvcj0nIzBmMmY1YycvPgogICAgPHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjMGEyNDQ3Jy8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmFkaWFsR3JhZGllbnQgaWQ9J2dsb3cnIGN4PSczMCUnIGN5PScyNSUnIHI9JzcwJSc+CiAgICA8c3RvcCBvZmZzZXQ9JzAnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwuMzUpJy8+CiAgICA8c3RvcCBvZmZzZXQ9JzEnIHN0b3AtY29sb3I9J3JnYmEoNzcsMTYzLDI1NSwwKScvPgogIDwvcmFkaWFsR3JhZGllbnQ+CjwvZGVmcz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNiZyknLz4KPHJlY3QgeD0nMCcgeT0nMCcgd2lkdGg9JzQ2MCcgaGVpZ2h0PScyNjAnIHJ4PScxOCcgZmlsbD0ndXJsKCNnbG93KScvPgo8ZyBvcGFjaXR5PScuMTInIHN0cm9rZT0nd2hpdGUnPgogIDxwYXRoIGQ9J000MCA0MCBINDIwJy8+PHBhdGggZD0nTTQwIDgwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTIwIEg0MjAnLz48cGF0aCBkPSdNNDAgMTYwIEg0MjAnLz48cGF0aCBkPSdNNDAgMjAwIEg0MjAnLz4KICA8cGF0aCBkPSdNODAgMzAgVjIzMCcvPjxwYXRoIGQ9J00xNDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yMDAgMzAgVjIzMCcvPjxwYXRoIGQ9J00yNjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zMjAgMzAgVjIzMCcvPjxwYXRoIGQ9J00zODAgMzAgVjIzMCcvPgo8L2c+CjwhLS0gY291bnR5IHNpbGhvdWV0dGUgYmxvYiAtLT4KPHBhdGggZD0nTTE1NSA3MGMzNS0zNSA5NS00MCAxNDAtMTggMzAgMTUgNTUgNDUgNjAgNzggNSAzNS0xMCA3Mi00MCA5NS00MCAzMC0xMTAgNDAtMTY1IDE1LTQ1LTIwLTc1LTcwLTU1LTEyMCA4LTIwIDI4LTQwIDYwLTUweicKICAgICAgZmlsbD0ncmdiYSgyNTUsMjU1LDI1NSwuMDcpJyBzdHJva2U9J3JnYmEoMjU1LDI1NSwyNTUsLjE4KScgc3Ryb2tlLXdpZHRoPScyJy8+CjwhLS0gcGluIC0tPgo8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgyNzAgOTUpJz4KICA8cGF0aCBkPSdNMTIgMjJzNy01LjIgNy0xMmE3IDcgMCAxIDAtMTQgMGMwIDYuOCA3IDEyIDcgMTJ6JyBmaWxsPScjZmZkMTY2Jy8+CiAgPGNpcmNsZSBjeD0nMTInIGN5PScxMCcgcj0nMi41JyBmaWxsPScjMGIxZDNhJy8+CjwvZz4KPHRleHQgeD0nMjgnIHk9JzQ0JyBmaWxsPSd3aGl0ZScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzE4JyBmb250LXdlaWdodD0nNzAwJz5MZWUgQ291bnR5LCBGbG9yaWRhPC90ZXh0Pgo8dGV4dCB4PScyOCcgeT0nNzAnIGZpbGw9J3JnYmEoMjU1LDI1NSwyNTUsLjc1KScgZm9udC1mYW1pbHk9J0FyaWFsJyBmb250LXNpemU9JzEzJz5TZXJ2aWNlIEFyZWEg4oCiIERyb3AgUGluIExvY2F0aW9uPC90ZXh0Pgo8L3N2Zz4=" alt="County map">
+          <div class="countyBottom">
+            <div class="pinline"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMicgaGVpZ2h0PScyMicgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJz4KPHBhdGggZD0nTTEyIDIyczctNS4yIDctMTJhNyA3IDAgMSAwLTE0IDBjMCA2LjggNyAxMiA3IDEyeicgZmlsbD0nI2ZmZDE2NicvPgo8Y2lyY2xlIGN4PScxMicgY3k9JzEwJyByPScyLjUnIGZpbGw9JyMwYjFkM2EnLz4KPC9zdmc+" alt="Pin"> Drop pin service area • Hardee County, FL</div>
+            <div class="countyMeta">
+              Posting support & coordination • Clear steps and quick communication • Professional service from start to finish.
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-
-  
-  <!-- SIGN UP (Working options below) -->
   <div class="card" id="signup" style="margin-top:22px">
     <div class="sectionTitle">Sign Up</div>
     <p class="subtitle" style="margin-top:6px">
-      Submit your information and we’ll contact you. To make this form <b>email you leads</b>, choose ONE option below.
+      Submit your information and we’ll contact you.
     </p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
-      <!-- OPTION A: Netlify Forms (recommended if you host on Netlify)
-           1) Upload this HTML to Netlify (drag & drop site).
-           2) Netlify will capture submissions. In Netlify dashboard:
-              Site settings → Forms → Form notifications → Email notifications → send to ExecutiveSuretyServices@Outlook.com
-      -->
-      <div style="padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03)">
-        <div style="font-weight:950">Option A (Recommended): Netlify Forms</div>
-        <div class="subtitle" style="margin-top:6px">Host on Netlify → enable email notifications to your inbox.</div>
-      </div>
-
-      <!-- OPTION B: Form endpoint service (Formspree / Getform / etc.)
-           Replace the action URL below with the endpoint they give you.
-           Example: action="https://formspree.io/f/xxxxxx"
-      -->
-      <div style="padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03)">
-        <div style="font-weight:950">Option B: Form Endpoint</div>
-        <div class="subtitle" style="margin-top:6px">Use a form service endpoint and forward to your email.</div>
-      </div>
-    </div>
+    
 
     
     <div id="successNotice" style="display:none;margin-top:16px;padding:14px;border-radius:16px;border:1px solid rgba(34,197,94,.35);background:rgba(34,197,94,.10);">
@@ -405,11 +510,8 @@
       action="/?success=true"
       style="margin-top:16px"
     >
-      <!-- Netlify required hidden input -->
       <input type="hidden" name="form-name" value="executive-surety-leads">
       <input type="hidden" name="subject" value="New Executive Surety Lead">
-
-      <!-- Honeypot (spam trap) -->
       <p style="display:none">
         <label>Don’t fill this out: <input name="bot-field"></label>
       </p>
@@ -453,19 +555,11 @@
           style="cursor:pointer;border:0;border-radius:12px;padding:12px 16px;font-weight:950;background:linear-gradient(180deg, rgba(77,163,255,1), rgba(35,120,255,.9));color:#001326;box-shadow:0 10px 25px rgba(0,0,0,.25)">
           Submit
         </button>
-        <div class="subtitle" style="margin:0">
-          Submissions are intended to be forwarded to <b>ExecutiveSuretyServices@Outlook.com</b> (configure Option A or B).
-        </div>
-      </div>
-
-      <div class="subtitle" style="margin-top:10px;font-size:12px">
-        Note: A plain HTML file can’t directly email you by itself without a form service or hosting feature.
-        If you tell me where you’re hosting (Netlify, GoDaddy, Wix, etc.), I’ll tailor this to the exact setup.
       </div>
     </form>
   </div>
 
-<div class="bioContact">
+oContact">
     <div class="card" id="bio">
       <div class="sectionTitle">About Executive Surety Services</div>
       <div class="bioText">With 16 years of experience executing bonds at nearly every jail from Hillsborough County, Florida to Key West, across multiple insurance surety companies, Executive Surety Services has maintained a record free of any Department of Financial Services complaints or investigations.
@@ -476,39 +570,14 @@ Our goal is to professionally facilitate surety agencies in getting their bonds 
     <div class="card" id="contact">
       <div class="sectionTitle">Connect</div>
       <div class="contactItem">📱 <div><strong>Office</strong><br><a href="tel:3052447388">305.244.7388</a></div></div>
-      <div class="contactItem">📧 <div><strong>Email</strong><br><a href="mailto:executivesuretyservices@outlook.com">executivesuretyservices@outlook.com</a></div></div>
+      <div class="contactItem">📧 <div><strong>Email</strong><br><a href="mailto:Jonathan@ExecutiveSurety.com">Jonathan@ExecutiveSurety.com</a></div></div>
       <div class="contactItem">🪪 <div><strong>License #</strong><br>W039051</div></div>
       <div class="contactItem">📸 <div><strong>Instagram</strong><br><a href="https://instagram.com/ExecutiveSurety" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width:18px;height:18px;vertical-align:middle;margin-right:6px;border-radius:4px;">@ExecutiveSurety</a></div></div>
-    </div>
-  </div>
-
-  
-  <div class="comingWrap" id="comingsoon">
-    <div class="comingTitle">🚧 COMING SOON SERVICE AREAS 🚧</div>
-    <div class="comingGrid">
-      <div class="comingCard">
-        <h3>Sarasota County</h3>
-        <div class="comingSub">Service expansion in progress</div>
-      </div>
-      <div class="comingCard">
-        <h3>Manatee County</h3>
-        <div class="comingSub">Service expansion in progress</div>
-      </div>
-      <div class="comingCard">
-        <h3>Highlands County</h3>
-        <div class="comingSub">Service expansion in progress</div>
-      </div>
+      <div class="contactItem">📘 <div><strong>Facebook</strong><br><a href="https://facebook.com/profile.php?id=61587919016375" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" style="width:18px;height:18px;vertical-align:middle;margin-right:6px;border-radius:4px;">Executive Surety Services, LLC</a></div></div>
     </div>
   </div>
 
 
-  <div class="card" id="coming-soon" style="margin-top:22px">
-    <div class="sectionTitle constructionBanner">🚧 COMING SOON SERVICE AREAS 🚧</div>
-        <p class="subtitle" style="margin-top:6px">
-      
-    </p>
-
-    </div>
 
 
   <script>
